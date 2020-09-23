@@ -36,13 +36,12 @@ const GlobalStyles = createGlobalStyle`
     html {
       font-size: 62.5%;
     }
-    html,
-    body,
-    #__next {
+    body {
       font-family: ${theme.font.family};
       font-size: ${theme.font.sizes.medium};
     }
   `}
+
 `
 
 export default GlobalStyles
