@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react'
 import { renderWithTheme } from 'utils/tests/helpers'
-// import { AddShoppingCart } from '@styled-icons/material-outlined/AddShoppingCart'
+import { AddShoppingCart } from '@styled-icons/material-outlined/AddShoppingCart'
 
 import Button from '.'
 
@@ -44,12 +44,12 @@ describe('<Button />', () => {
     })
   })
 
-  // it('should render an icon version', () => {
-  //   renderWithTheme(
-  //     <Button icon={<AddShoppingCart data-testid="icon" />}>Buy now</Button>
-  //   )
+  it('should render an icon version', () => {
+    renderWithTheme(
+      <Button icon={<AddShoppingCart data-testid="icon" />}>Buy now</Button>
+    )
 
-  //   expect(screen.getByText(/buy now/i)).toBeInTheDocument()
-  //   expect(screen.getByTestId('icon')).toBeInTheDocument()
-  // })
+    expect(screen.getByText(/buy now/i)).toBeInTheDocument()
+    expect(screen.getByTestId('icon')).toBeInTheDocument()
+  })
 })
