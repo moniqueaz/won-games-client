@@ -15,7 +15,23 @@ module.exports = function (plop) {
       }
     ],
     actions: function (data) {
-      const actions = [
+      const actions = []
+
+      if (data.path === 'pages') {
+        actions.push({
+          type: 'add',
+          path: '../src/{{path}}/{{camelCase name}}.tsx',
+          templateFile: 'templates/pages.tsx.hbs'
+        })
+
+        return actions
+      }
+      return [
+        {
+          type: 'add',
+          path: '../src/{{path}}/{{pascalCase name}}/index.tsx',
+          templateFile: 'templates/index.tsx.hbs'
+        },
         {
           type: 'add',
           path: '../src/{{path}}/{{pascalCase name}}/stories.tsx',
@@ -32,23 +48,6 @@ module.exports = function (plop) {
           templateFile: 'templates/test.tsx.hbs'
         }
       ]
-
-      if (data.path === 'pages') {
-        actions.push({
-          type: 'add',
-          path: '../src/{{path}}/{{pascalCase name}}/index.tsx',
-          templateFile: 'templates/index-pages.tsx.hbs'
-        })
-
-        return actions
-      }
-
-      actions.push({
-        type: 'add',
-        path: '../src/{{path}}/{{pascalCase name}}/index.tsx',
-        templateFile: 'templates/index.tsx.hbs'
-      })
-      return actions
     }
   })
 }
