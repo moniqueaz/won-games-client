@@ -26,6 +26,26 @@ module.exports = function (plop) {
 
         return actions
       }
+
+      if (data.path === 'templates') {
+        return [
+          {
+            type: 'add',
+            path: '../src/{{path}}/{{pascalCase name}}/index.tsx',
+            templateFile: 'templates/index.tsx.hbs'
+          },
+          {
+            type: 'add',
+            path: '../src/{{path}}/{{pascalCase name}}/styles.ts',
+            templateFile: 'templates/styles.ts.hbs'
+          },
+          {
+            type: 'add',
+            path: '../src/{{path}}/{{pascalCase name}}/test.tsx',
+            templateFile: 'templates/test.tsx.hbs'
+          }
+        ]
+      }
       return [
         {
           type: 'add',
