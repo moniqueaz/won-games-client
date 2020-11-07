@@ -1,7 +1,10 @@
-import Home from 'templates/Home'
+import Home, { HomeTemplateProps } from 'templates/Home'
+import bannersMock from 'components/BannerSlider/mock'
+import gamesMock from 'components/GameCardSlider/mock'
+import highlightMock from 'components/Highlight/mock'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export default function Index(props: any) {
+export default function Index(props: HomeTemplateProps) {
   return <Home {...props} />
 }
 
@@ -19,7 +22,15 @@ export function getServerSideProps() {
   // retorno dos dados
   return {
     props: {
-      heading: 'Olha eu aqui!!!!! 1234 ssr'
+      banners: bannersMock,
+      newGames: gamesMock,
+      mostPopularHighlight: highlightMock,
+      mostPopularGames: gamesMock,
+      upcommingGames: gamesMock,
+      upcommingHighligth: highlightMock,
+      upcommingMoreGames: gamesMock,
+      freeGames: gamesMock,
+      freeHighligth: highlightMock
     }
   }
 }
