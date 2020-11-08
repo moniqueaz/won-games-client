@@ -2,9 +2,9 @@ import Auth from 'templates/Auth'
 
 // ATENÇÃO:
 // remover any e definir os types
-const SingUp = () => (
+const SignUp = () => (
   <Auth title="Sign Up">
-    <div>sing up</div>
+    <div>sign up</div>
   </Auth>
 )
 
@@ -25,4 +25,4 @@ export function getServerSideProps() {
   }
 }
 
-export default SingUp
+export default SignUp
