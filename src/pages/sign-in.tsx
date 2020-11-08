@@ -1,28 +1,12 @@
 import Auth from 'templates/Auth'
+import FormSignIn from 'components/FormSignIn'
 
-// ATENÇÃO:
-// remover any e definir os types
-const SignIn = () => (
-  <Auth title="Sign In">
-    <div>Sign In</div>
-  </Auth>
-)
-
-// ATENÇÃO:
-// os métodos getStaticProps/getServerSideProps SÓ FUNCIONAM EM PAGES
-
-// getStaticProps => gerar estático em build time
-// getServerSideProps => gerar via ssr a cada request
-// getInitialProps => gerar via ssr a cada request
-export function getServerSideProps() {
-  // faz lógica
-  // pode ser buscar dados numa API
-  // fazer calculo|leitura de context
-
-  // retorno dos dados
-  return {
-    props: {}
-  }
+const SignIn = () => {
+  return (
+    <Auth title="Sign In">
+      <FormSignIn />
+    </Auth>
+  )
 }
 
 export default SignIn
