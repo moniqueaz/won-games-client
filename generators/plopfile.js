@@ -6,7 +6,7 @@ module.exports = function (plop) {
         type: 'list',
         name: 'path',
         message: 'path name please',
-        choices: ['components', 'templates', 'route/pages']
+        choices: ['components', 'templates', 'styles', 'route/pages']
       },
       {
         type: 'input',
@@ -21,6 +21,21 @@ module.exports = function (plop) {
             type: 'add',
             path: '../src/pages/{{dashCase name}}.tsx',
             templateFile: 'templates/pages.tsx.hbs'
+          }
+        ]
+      }
+
+      if (data.path === 'styles') {
+        return [
+          {
+            type: 'add',
+            path: '../src/components/{{pascalCase name}}/index.ts',
+            templateFile: 'templates/styles.ts.hbs'
+          },
+          {
+            type: 'add',
+            path: '../src/components/{{pascalCase name}}/test.tsx',
+            templateFile: 'templates/testStyles.ts.tsx.hbs'
           }
         ]
       }
