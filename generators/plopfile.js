@@ -6,7 +6,7 @@ module.exports = function (plop) {
         type: 'list',
         name: 'path',
         message: 'path name please',
-        choices: ['components', 'templates', 'pages']
+        choices: ['components', 'templates', 'route/pages']
       },
       {
         type: 'input',
@@ -15,16 +15,14 @@ module.exports = function (plop) {
       }
     ],
     actions: function (data) {
-      const actions = []
-
-      if (data.path === 'pages') {
-        actions.push({
-          type: 'add',
-          path: '../src/{{path}}/{{camelCase name}}.tsx',
-          templateFile: 'templates/pages.tsx.hbs'
-        })
-
-        return actions
+      if (data.path === 'route/pages') {
+        return [
+          {
+            type: 'add',
+            path: '../src/pages/{{dashCase name}}.tsx',
+            templateFile: 'templates/pages.tsx.hbs'
+          }
+        ]
       }
 
       if (data.path === 'templates') {

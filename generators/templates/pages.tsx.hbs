@@ -1,8 +1,13 @@
-import {{pascalCase name}} from 'templates/{{pascalCase name}}'
+// import {{pascalCase name}} from 'templates/{{pascalCase name}}'
 
 // ATENÇÃO:
 // remover any e definir os types
-const Index = (props: any) => <{{pascalCase name}} {...props} />
+const {{pascalCase name}} = (props: any) => (
+  <>
+    <h1>{{pascalCase name}}</h1>
+    {/* <{{pascalCase name}} {...props} /> */}
+  </>
+)
 
 // ATENÇÃO:
 // os métodos getStaticProps/getServerSideProps SÓ FUNCIONAM EM PAGES
@@ -21,4 +26,4 @@ export function getServerSideProps() {
   }
 }
 
-export default Index
+export default {{pascalCase name}} 
