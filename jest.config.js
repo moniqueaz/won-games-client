@@ -9,7 +9,7 @@ module.exports = {
     '!src/styles/**/*.ts'
   ],
   coverageThreshold: {
-    './src/**': {
+    './**': {
       branches: 80,
       functions: 80,
       lines: 80,
