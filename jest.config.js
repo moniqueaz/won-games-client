@@ -8,12 +8,14 @@ module.exports = {
     '!src/pages/**/*.tsx',
     '!src/styles/**/*.ts'
   ],
-  coverageThreshold: {
-    './**': {
-      branches: 80,
-      functions: 80,
-      lines: 80,
-      statements: 80
+  jest: {
+    coverageThreshold: {
+      global: {
+        branches: 80,
+        functions: 80,
+        lines: 80,
+        statements: 80
+      }
     }
   },
   setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts'],
