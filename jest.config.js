@@ -6,8 +6,10 @@ module.exports = {
     'src/**/*.ts(x)?',
     '!src/**/stories.tsx',
     '!src/pages/**/*.tsx',
-    '!src/styles/**/*.ts'
+    '!src/styles/**/*.ts',
+    '!**/coverage/**'
   ],
+  coverageReporters: ['json', 'lcov', 'text', 'clover', 'html'],
   coverageThreshold: {
     'src/**/**': {
       branches: 80,
